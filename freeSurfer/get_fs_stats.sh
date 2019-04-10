@@ -9,25 +9,25 @@ export SUBJECTS_DIR=$dataDir
 #printf "%s\n" "${subj[@]}" > "$subjList"
 
 
-# asegstats2table --skip \
-# 		--subjectsfile=${subjList} \
-# 		--tablefile aseg_stats.csv \
-# 		--delimiter=comma \
-# 		--all-segs
+ asegstats2table --skip \
+ 		--subjectsfile=${subjList} \
+ 		--tablefile aseg_stats.csv \
+ 		--delimiter=comma \
+ 		--all-segs
 
-# aparcstats2table --hemi lh \
-#      		 --subjectsfile=${subjList} \
-#      		 --meas thickness \
-#      		 --parc aparc \
-#      		 --tablefile aseg_stats_lh.csv \
-# 		 --delimiter=comma \
-#                  --skip
+aparcstats2table --hemi lh \
+      		 --subjectsfile=${subjList} \
+      		 --meas thickness \
+      		 --parc aparc \
+      		 --tablefile aparc_stats_lh.csv \
+ 		 --delimiter=comma \
+                  --skip
 
 aparcstats2table --hemi rh \
 		 --subjectsfile=${subjList} \
      		 --meas thickness \
      		 --parc aparc \
-     		 --tablefile aseg_stats_rh.csv \
+     		 --tablefile aparc_stats_rh.csv \
 		 --delimiter=comma \
                  --skip
 
