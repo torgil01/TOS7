@@ -1,4 +1,5 @@
 *.nii
+.csv
 *.nii.gz
 .Rhistory
 *~
