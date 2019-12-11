@@ -1,15 +1,19 @@
 #!/bin/bash
+# extract freesurfer statistics from single folder
+#
 
-# loop over folders
 
-dataDir=TOS7_FS
-subjList=subj_list.txt
+
+dataDir=freeSurfer
 export SUBJECTS_DIR=$dataDir
-#subj=$(find $dataDir -maxdepth 1 -mindepth 1 -type d -printf "%f\n ")
-#printf "%s\n" "${subj[@]}" > "$subjList"
 
+# generate list of subjects and write to file
+subjList=subj_list.txt
+subj=$(find $dataDir -maxdepth 1 -mindepth 1 -type d -printf "%f\n ")
+printf "%s\n" "${subj[@]}" > "$subjList"
 
- asegstats2table --skip \
+# compute stats
+asegstats2table --skip \
  		--subjectsfile=${subjList} \
  		--tablefile aseg_stats.csv \
  		--delimiter=comma \
